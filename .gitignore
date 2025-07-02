@@ -1,11 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+# ========== Unity Meta Files ==========
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
-[Mm]emoryCaptures/
+UserSettings/
+MemoryGame01/Library/
+MemoryGame01/Temp/
+MemoryGame01/Obj/
 
+# ========== OS & IDE Files ==========
+.DS_Store
+.idea/
 .vscode/
 *.csproj
 *.unityproj
@@ -17,9 +26,9 @@
 *.pidb
 *.booproj
 *.svd
-
-.DS_Store
-Thumbs.db
-
+*.pdb
 *.apk
 *.aab
+
+
+</configuration>
