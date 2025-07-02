@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{245DF09C-FBDC-FC6D-A4CF-19CE02C96AD1}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Picture.cs">
+    <Files>
+      <File FileName="Assets/Script/ButtonBehaviour.cs" Line="12" Column="1" />
+      <File FileName="Assets/Script/GameSettings.cs" />
+      <File FileName="Assets/Script/Picture.cs" Line="86" Column="10" />
+      <File FileName="Assets/Script/PictureManager.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MemoryGame01" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Editor" expanded="True" />
+              <Node name="Script" expanded="True">
+                <Node name="ButtonBehaviour.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cef1e02a-2076-493f-b959-3cf88e7bb498" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
