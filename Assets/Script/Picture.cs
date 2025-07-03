@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Picture :MonoBehaviour
 {
+    public AudioClip PressSound;
     private Material _firstMaterial;
     private Material _secondMaterial;
     private Quaternion _currentRoation;
@@ -12,6 +13,7 @@ public class Picture :MonoBehaviour
     private bool _clicked = false;
     private int _index;
 
+    private AudioSource _audio;
 
     public void SetIndex(int id)
     {
@@ -29,6 +31,9 @@ public class Picture :MonoBehaviour
         _clicked = false;
         _pictureManager = GameObject.Find("PictureManager").GetComponent<PicturManager>();
         _currentRoation = gameObject.transform.rotation;
+
+        _audio = GetComponent<AudioSource>();
+        _audio.clip = PressSound;
     }
 
     private void OnMouseDown()
@@ -36,8 +41,16 @@ public class Picture :MonoBehaviour
         if(_clicked == false)
         {
             _pictureManager.CurrentPuzzleState = PicturManager.PuzzleState.PuzzleRotating;
+
+            if (GameSettings.Instance.IsSoundEffectMutedPermanently() == false)
+            {
+                _audio.Play();
+            }
+
             StartCoroutine(LoopRotation(45, false));
             _clicked = true;
+
+            
 
         }
 
