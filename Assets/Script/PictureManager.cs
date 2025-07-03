@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,11 +9,13 @@ public class PicturManager :MonoBehaviour
 {
     public Picture PicturePrefab;
     [Space]
-    [Header("End Game nScreen")]
+    [Header("End Game Screen")]
     public GameObject EndGamePanel;
     public GameObject NewBestScoreText;
     public GameObject YourScoreText;
-    public GameObject EndTimeText;
+    //public GameObject EndTimeText;
+    public TextMeshProUGUI EndTimeText;
+
 
     public Transform PicSpawnPosition;
     public enum GameState { NoAction, MovingOnPosition, DeletingPuzzles, FlipBack, Checkign, GameEnd };
@@ -130,6 +134,8 @@ public class PicturManager :MonoBehaviour
     private void ShowEndGameInformation()
     {
         EndGamePanel.SetActive(true);
+        //YourScoreText.SetActive(true);
+
 
         if (Config.IsBestScore())
         {
@@ -147,7 +153,10 @@ public class PicturManager :MonoBehaviour
         var minutes = Mathf.Floor(timer / 60);
         var seconds = Mathf.RoundToInt(timer % 60);
         var newText = minutes.ToString("00") + ":" + seconds.ToString("00");
-        EndTimeText.GetComponent<Text>().text = newText;
+
+        EndTimeText.GetComponent<TMPro.TextMeshProUGUI>().text = newText;
+
+
     }
 
     private bool CheckGameEnd()

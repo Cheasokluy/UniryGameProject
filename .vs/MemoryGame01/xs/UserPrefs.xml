@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{245DF09C-FBDC-FC6D-A4CF-19CE02C96AD1}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Config.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ScoreBoard.cs">
     <Files>
-      <File FileName="Assets/Script/ButtonBehaviour.cs" Line="13" Column="51" />
+      <File FileName="Assets/Script/ButtonBehaviour.cs" Line="9" Column="1" />
       <File FileName="Assets/Script/GameSettings.cs" Line="123" Column="35" />
       <File FileName="Assets/Script/Picture.cs" Line="145" Column="46" />
-      <File FileName="Assets/Script/PictureManager.cs" Line="199" Column="25" />
+      <File FileName="Assets/Script/PictureManager.cs" Line="142" Column="46" />
       <File FileName="Assets/Script/Timer.cs" Line="49" Column="27" />
-      <File FileName="Assets/Script/MuteSoundEffectButton.cs" Line="57" Column="38" />
-      <File FileName="Assets/Script/Config.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/MuteSoundEffectButton.cs" Line="33" Column="1" />
+      <File FileName="Assets/Script/Config.cs" Line="61" Column="20" />
+      <File FileName="Assets/Script/ScoreBoard.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +16,7 @@
           <Node name="MemoryGame01" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
-                <Node name="Config.cs" selected="True" />
+                <Node name="ScoreBoard.cs" selected="True" />
               </Node>
             </Node>
           </Node>

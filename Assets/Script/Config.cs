@@ -58,7 +58,7 @@ private static readonly string Dir = Directory.GetCurrentDirectory();
             line = file.ReadLine();
         }
 
-        for(int i=0; i <= NumberOfScoreRecords; i++)
+        for(int i=1; i <= NumberOfScoreRecords; i++)
         {
             var word = line.Split('#');
             if(word[0] == i.ToString())
