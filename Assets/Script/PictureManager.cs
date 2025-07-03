@@ -1,10 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class PicturManager :MonoBehaviour 
 {
     public Picture PicturePrefab;
+    [Space]
+    [Header("End Game nScreen")]
+    public GameObject EndGamePanel;
+    public GameObject NewBestScoreText;
+    public GameObject YourScoreText;
+    public GameObject EndTimeText;
+
     public Transform PicSpawnPosition;
     public enum GameState { NoAction, MovingOnPosition, DeletingPuzzles, FlipBack, Checkign, GameEnd };
     public enum PuzzleState
@@ -47,6 +55,12 @@ public class PicturManager :MonoBehaviour
 
     private bool _corutineStarted = false;
 
+    private int _pairNumbers;
+    private int _removedPairs;
+    private Timer _gameTimer;
+    
+
+
     private void Start()
     {
 
@@ -57,6 +71,10 @@ public class PicturManager :MonoBehaviour
         _firstRevealedPic = -1;
         _secondRevealedPic = -1;
 
+        _removedPairs = 0;
+        _pairNumbers = (int)GameSettings.Instance.GetPairNumber();
+
+        _gameTimer = GameObject.Find("Main Camera").GetComponent<Timer>();
 
         LoadMaterials();
 
@@ -87,6 +105,7 @@ public class PicturManager :MonoBehaviour
             if(CurrentPuzzleState == PuzzleState.CanRotate)
             {
                 DestroyPicture();
+                CheckGameEnd();
             }
         }
         if(CurrentGameState == GameState.FlipBack)
@@ -96,6 +115,38 @@ public class PicturManager :MonoBehaviour
                 StartCoroutine(FlipBack());
             }
         }
+
+        if(CurrentGameState == GameState.GameEnd)
+        {
+            if(PictureList[_firstRevealedPic].gameObject.activeSelf == false &&
+                PictureList[_secondRevealedPic].gameObject.activeSelf == false &&
+                EndGamePanel.activeSelf == false)
+            {
+                ShowEndGameInformation();
+            }
+        }
+    }
+
+    private void ShowEndGameInformation()
+    {
+        EndGamePanel.SetActive(true);
+        YourScoreText.SetActive(true);
+
+        var timer = _gameTimer.GetCurrentTime();
+        var minutes = Mathf.Floor(timer / 60);
+        var seconds = Mathf.RoundToInt(timer % 60);
+        var newText = minutes.ToString("00") + ":" + seconds.ToString("00");
+        EndTimeText.GetComponent<Text>().text = newText;
+    }
+
+    private bool CheckGameEnd()
+    {
+        if(_removedPairs == _pairNumbers && CurrentGameState != GameState.GameEnd)
+        {
+            CurrentGameState = GameState.GameEnd;
+            _gameTimer.StopTimer();
+        }
+        return (CurrentGameState == GameState.GameEnd);
     }
 
     public void CheckPicture()
@@ -145,6 +196,7 @@ public class PicturManager :MonoBehaviour
         PictureList[_picToDestroy1].Deactivate();
         PictureList[_picToDestroy2].Deactivate();
         _revealedPicNumber = 0;
+        _removedPairs++;
         CurrentGameState = GameState.NoAction;
         CurrentPuzzleState = PuzzleState.CanRotate;
     }

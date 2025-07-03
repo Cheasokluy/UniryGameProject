@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.715, y: 31.93}
+  m_AnchoredPosition: {x: -4.7149963, y: 31.929993}
   m_SizeDelta: {x: -9.43, y: -310.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157033869
@@ -904,7 +904,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 721959652}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1904839269}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &721959652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2462,6 +2474,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PicturePrefab: {fileID: 4471979414213868559, guid: 06e456db3bead4c59a60c7af981883dc, type: 3}
+  EndGamePanel: {fileID: 157033867}
+  NewBestScoreText: {fileID: 593514980}
+  YourScoreText: {fileID: 523478244}
+  EndTimeText: {fileID: 1971738503}
   PicSpawnPosition: {fileID: 1371480376}
   CurrentGameState: 0
   CurrentPuzzleState: 0
