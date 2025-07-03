@@ -1,17 +1,21 @@
 ﻿<Properties StartupConfiguration="{245DF09C-FBDC-FC6D-A4CF-19CE02C96AD1}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument=".gitignore">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Timer.cs">
     <Files>
       <File FileName="Assets/Script/ButtonBehaviour.cs" Line="12" Column="1" />
       <File FileName="Assets/Script/GameSettings.cs" />
-      <File FileName="Assets/Script/Picture.cs" Line="86" Column="10" />
-      <File FileName="Assets/Script/PictureManager.cs" Line="219" Column="36" />
-      <File FileName=".gitignore" Line="1" Column="1" />
+      <File FileName="Assets/Script/Picture.cs" Line="132" Column="37" />
+      <File FileName="Assets/Script/PictureManager.cs" Line="143" Column="44" />
+      <File FileName="Assets/Script/Timer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="MemoryGame01" expanded="True" selected="True">
-            <Node name="Assets" expanded="True" />
+          <Node name="MemoryGame01" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True">
+                <Node name="Timer.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

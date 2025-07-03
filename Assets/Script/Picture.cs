@@ -10,6 +10,18 @@ public class Picture :MonoBehaviour
     [HideInInspector] public bool Revealed = false;
     private PicturManager _pictureManager;
     private bool _clicked = false;
+    private int _index;
+
+
+    public void SetIndex(int id)
+    {
+        _index = id;
+    }
+    public int GetIndex()
+    {
+        return _index;
+
+    }
 
     private void Start()
     {
@@ -113,5 +125,10 @@ public class Picture :MonoBehaviour
     public void ApplySecondMaterial()
     {
         gameObject.GetComponent<Renderer>().material = _secondMaterial;
+    }
+
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }
