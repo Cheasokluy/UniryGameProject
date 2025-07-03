@@ -45,6 +45,8 @@ public class PicturManager :MonoBehaviour
     private int _picToDestroy1;
     private int _picToDestroy2;
 
+    private bool _corutineStarted = false;
+
     private void Start()
     {
 
@@ -89,9 +91,9 @@ public class PicturManager :MonoBehaviour
         }
         if(CurrentGameState == GameState.FlipBack)
         {
-            if(CurrentPuzzleState == PuzzleState.CanRotate)
+            if(CurrentPuzzleState == PuzzleState.CanRotate && _corutineStarted == false)
             {
-                FlipBack();
+                StartCoroutine(FlipBack());
             }
         }
     }
@@ -140,7 +142,6 @@ public class PicturManager :MonoBehaviour
     private void DestroyPicture()
     {
         PuzzleRevealedNumber = RevealedState.NoRevealed;
-        System.Threading.Thread.Sleep(200);
         PictureList[_picToDestroy1].Deactivate();
         PictureList[_picToDestroy2].Deactivate();
         _revealedPicNumber = 0;
@@ -148,8 +149,11 @@ public class PicturManager :MonoBehaviour
         CurrentPuzzleState = PuzzleState.CanRotate;
     }
 
-    private void FlipBack()
+    private IEnumerator FlipBack()
     {
+        _corutineStarted = true;
+        yield return new WaitForSeconds(0.5f);
+
         PictureList[_firstRevealedPic].FlipBack();
         PictureList[_secondRevealedPic].FlipBack();
 
@@ -158,6 +162,8 @@ public class PicturManager :MonoBehaviour
 
         PuzzleRevealedNumber = RevealedState.NoRevealed;
         CurrentGameState = GameState.NoAction;
+
+        _corutineStarted = false;
     }
 
     private void LoadMaterials()

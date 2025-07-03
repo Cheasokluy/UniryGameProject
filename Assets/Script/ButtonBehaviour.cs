@@ -7,5 +7,10 @@ public class ButtonBehaviour : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void ResetGameSettings()
+    {
+        GameSettings.Instance.ResetGameSettings();
+    }
     
 }
