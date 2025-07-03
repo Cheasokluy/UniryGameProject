@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{245DF09C-FBDC-FC6D-A4CF-19CE02C96AD1}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/MuteSoundEffectButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Config.cs">
     <Files>
-      <File FileName="Assets/Script/ButtonBehaviour.cs" Line="12" Column="1" />
-      <File FileName="Assets/Script/GameSettings.cs" />
-      <File FileName="Assets/Script/Picture.cs" Line="132" Column="37" />
-      <File FileName="Assets/Script/PictureManager.cs" Line="143" Column="44" />
-      <File FileName="Assets/Script/Timer.cs" Line="32" Column="1" />
-      <File FileName="Assets/Script/MuteSoundEffectButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/ButtonBehaviour.cs" Line="13" Column="51" />
+      <File FileName="Assets/Script/GameSettings.cs" Line="123" Column="35" />
+      <File FileName="Assets/Script/Picture.cs" Line="145" Column="46" />
+      <File FileName="Assets/Script/PictureManager.cs" Line="199" Column="25" />
+      <File FileName="Assets/Script/Timer.cs" Line="49" Column="27" />
+      <File FileName="Assets/Script/MuteSoundEffectButton.cs" Line="57" Column="38" />
+      <File FileName="Assets/Script/Config.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +15,7 @@
           <Node name="MemoryGame01" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
-                <Node name="MuteSoundEffectButton.cs" selected="True" />
+                <Node name="Config.cs" selected="True" />
               </Node>
             </Node>
           </Node>

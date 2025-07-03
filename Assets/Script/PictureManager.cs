@@ -130,7 +130,18 @@ public class PicturManager :MonoBehaviour
     private void ShowEndGameInformation()
     {
         EndGamePanel.SetActive(true);
-        YourScoreText.SetActive(true);
+
+        if (Config.IsBestScore())
+        {
+            NewBestScoreText.SetActive(true);
+            YourScoreText.SetActive(false);
+        }
+        else
+        {
+            NewBestScoreText.SetActive(false);
+            YourScoreText.SetActive(true);
+        }
+
 
         var timer = _gameTimer.GetCurrentTime();
         var minutes = Mathf.Floor(timer / 60);
@@ -145,6 +156,7 @@ public class PicturManager :MonoBehaviour
         {
             CurrentGameState = GameState.GameEnd;
             _gameTimer.StopTimer();
+            Config.PlaceScoreOnBoard(_gameTimer.GetCurrentTime());
         }
         return (CurrentGameState == GameState.GameEnd);
     }
